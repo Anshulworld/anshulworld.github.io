@@ -77,10 +77,13 @@
     box-shadow:0 1px 2px rgba(15,23,42,.03), 0 10px 28px rgba(15,23,42,.05);}
 
   /* ---------- NAV ---------- */
-  header.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-  body[data-theme="dark"] header.nav{background:rgba(10,12,16,.78);}
-  .nav-inner{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
-  @media (max-width:600px){.nav-inner{padding:14px 20px;}}
+  header.nav{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);}
+  /* blur + tint live on a pseudo-element: backdrop-filter on the header itself would turn it into the
+     containing block of the position:fixed mobile menu and break its sizing/hit-testing on phones */
+  header.nav::before{content:'';position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+  body[data-theme="dark"] header.nav::before{background:rgba(10,12,16,.78);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+  @media (max-width:600px){.nav-inner{padding:0 20px;}}
   .brand{display:flex;align-items:center;gap:10px;}
   .brand-badge{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;
     font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:#fff;box-shadow:0 6px 18px -4px rgba(14,165,160,.5);}
@@ -99,7 +102,8 @@
   .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
   .btn-sm{padding:9px 16px;font-size:12.5px;}
   .btn svg{width:15px;height:15px;}
-  .nav-cta{display:flex;align-items:center;gap:12px;}
+  .nav-cta{display:flex;align-items:center;gap:12px;position:relative;z-index:101;}
+  nav.links .nav-mobile-cta{display:none;}
   .icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);
     display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;flex-shrink:0;}
   .icon-btn:hover{border-color:var(--accent);background:var(--surface-2);}
@@ -368,11 +372,17 @@
   .to-top svg{width:17px;height:17px;color:#fff;}
 
   @media (max-width:760px){
-    nav.links{position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--bg);backdrop-filter:blur(10px);
-      flex-direction:column;align-items:flex-start;gap:0;padding:12px 24px 30px;transform:translateY(-110%);opacity:0;
-      transition:transform .3s ease, opacity .3s ease;z-index:99;border-top:1px solid var(--border);}
-    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links{position:fixed;top:73px;left:0;right:0;bottom:0;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      flex-direction:column;align-items:flex-start;gap:0;padding:12px 24px 30px;transform:translateY(-12px);opacity:0;
+      visibility:hidden;pointer-events:none;
+      transition:transform .3s ease, opacity .3s ease, visibility 0s linear .3s;z-index:99;border-top:1px solid var(--border);}
+    nav.links.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;
+      transition:transform .3s ease, opacity .3s ease, visibility 0s;}
     nav.links a{width:100%;padding:16px 0;border-bottom:1px solid var(--border);font-size:15px;}
+    nav.links a.nav-mobile-cta{display:flex;color:#fff;border-bottom:none;padding:13px 20px;margin-top:18px;}
+    .burger.open span{background:transparent;}
+    .burger.open span::before{top:0;transform:rotate(45deg);}
+    .burger.open span::after{top:0;transform:rotate(-45deg);}
     .burger{display:flex;width:38px;height:38px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
     .nav-cta .btn-primary.btn-sm{display:none;}
     nav.links .btn{margin-top:14px;width:100%;justify-content:center;}
@@ -399,7 +409,7 @@
       <a href="#projects" data-nav>Projects</a>
       <a href="#certs" data-nav>Certs</a>
       <a href="#badges" data-nav>Badges</a>
-      <a href="#contact" class="btn btn-primary btn-sm" style="display:none;">Let's Talk</a>
+      <a href="#contact" class="btn btn-primary nav-mobile-cta">Let's Talk</a>
     </nav>
     <div class="nav-cta">
       <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -1044,8 +1054,17 @@
   // mobile nav toggle
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  function setMenu(open){
+    navLinks.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.setAttribute('aria-expanded', 'false');
+  burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 760) setMenu(false); });
 
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
@@ -1079,8 +1098,10 @@
   // theme toggle with sound
   (function(){
     const toggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function getSaved(){ try { return localStorage.getItem('theme'); } catch(e){ return null; } }
+    function setSaved(v){ try { localStorage.setItem('theme', v); } catch(e){} }
+    const saved = getSaved();
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initial = saved || (prefersDark ? 'dark' : 'light');
     let audioCtx = null;
     function playSwitchSound(toDark){
@@ -1113,7 +1134,7 @@
       const next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       playSwitchSound(next === 'dark');
       apply(next);
-      localStorage.setItem('theme', next);
+      setSaved(next);
     });
   })();
 
