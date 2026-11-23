@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anshul Kumar Singh — Data Analyst</title>
-<meta name="description" content="Anshul Kumar Singh — Data Analyst portfolio. SQL, Python, Power BI, Tableau, trading-honed risk analysis.">
+<title>Anshul Kumar Singh — Data Scientist &amp; Data Analyst</title>
+<meta name="description" content="Anshul Kumar Singh — Data Scientist &amp; Data Analyst portfolio. Python, SQL, machine learning, Power BI, Tableau and trading-honed risk analysis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -94,6 +94,7 @@
   nav.links a:hover{color:var(--text);}
   nav.links a.active{color:var(--accent);}
   nav.links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad);border-radius:2px;}
+  @media (max-width:1040px){nav.links{gap:18px;}nav.links a{font-size:13px;}}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:600;cursor:pointer;
     border:1px solid transparent;white-space:nowrap;transition:transform .2s, box-shadow .2s, background .2s, border-color .2s;}
   .btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 24px -8px rgba(14,165,160,.5);}
@@ -241,6 +242,19 @@
   .skill-tags .tag{border:1px solid var(--border);padding:9px 16px;font-size:12.5px;font-weight:500;border-radius:100px;color:var(--muted);background:var(--surface);transition:all .15s;}
   .skill-tags .tag:hover{color:var(--text);border-color:rgba(14,165,160,.4);}
 
+  /* ---------- TECH STACK ---------- */
+  .stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:980px){.stack-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:620px){.stack-grid{grid-template-columns:1fr;}}
+  .stack-card{padding:24px;transition:transform .25s, border-color .25s;}
+  .stack-card:hover{transform:translateY(-4px);border-color:var(--accent);}
+  .stack-card h4{font-size:15.5px;margin-bottom:6px;}
+  .stack-card p{font-size:12.5px;margin-bottom:14px;}
+  .chip-wrap{display:flex;flex-wrap:wrap;gap:7px;}
+  .tech-chip{font-size:11.5px;font-weight:500;padding:5px 11px;border:1px solid var(--border);border-radius:100px;background:var(--surface);color:var(--text);transition:border-color .15s, color .15s;}
+  .tech-chip:hover{border-color:rgba(14,165,160,.5);color:var(--accent);}
+  .tool-chip-link{border-color:rgba(14,165,160,.4);color:var(--accent);}
+
   /* ---------- PROJECTS ---------- */
   .subsec-title{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:9px;}
   .subsec-title svg{width:16px;height:16px;}
@@ -298,7 +312,8 @@
 
   /* ---------- CERTIFICATIONS overview icon-grid ---------- */
   .cert-overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
-  @media (max-width:760px){.cert-overview-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:760px){.cert-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media (max-width:480px){.cert-overview-grid{grid-template-columns:1fr;}}
   .cert-ov-card{padding:20px;display:flex;gap:13px;align-items:center;transition:border-color .2s, transform .2s;}
   .cert-ov-card:hover{border-color:var(--accent);transform:translateY(-3px);}
   .cert-ov-icon{width:38px;height:38px;border-radius:10px;background:rgba(14,165,160,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -318,6 +333,10 @@
   .cred-link{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--accent);white-space:nowrap;transition:opacity .15s;}
   .cred-link:hover{opacity:.72;}
 
+  @media (max-width:480px){
+    .cert-row{flex-wrap:wrap;row-gap:8px;padding:16px 16px;}
+    .cert-row > div:last-child{margin-left:41px;}
+  }
   .cert-feature{display:grid;grid-template-columns:260px 1fr;gap:0;overflow:hidden;margin-top:16px;}
   @media (max-width:700px){.cert-feature{grid-template-columns:1fr;}}
   .cert-image{width:100%;height:100%;object-fit:cover;display:block;border-right:1px solid var(--border);}
@@ -371,7 +390,7 @@
   .to-top:hover{transform:translateY(-3px);}
   .to-top svg{width:17px;height:17px;color:#fff;}
 
-  @media (max-width:760px){
+  @media (max-width:920px){
     nav.links{position:fixed;top:73px;left:0;right:0;bottom:0;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;
       flex-direction:column;align-items:flex-start;gap:0;padding:12px 24px 30px;transform:translateY(-12px);opacity:0;
       visibility:hidden;pointer-events:none;
@@ -400,12 +419,13 @@
   <div class="nav-inner">
     <a href="#top" class="brand">
       <span class="brand-badge">AS</span>
-      <span class="brand-name">Anshul Kumar Singh<span>Data Analyst</span></span>
+      <span class="brand-name">Anshul Kumar Singh<span>Data Scientist &amp; Data Analyst</span></span>
     </a>
     <nav class="links" id="navLinks">
       <a href="#about" data-nav>About</a>
       <a href="#experience" data-nav>Experience</a>
       <a href="#skills" data-nav>Skills</a>
+      <a href="#stack" data-nav>Tech Stack</a>
       <a href="#projects" data-nav>Projects</a>
       <a href="#certs" data-nav>Certs</a>
       <a href="#badges" data-nav>Badges</a>
@@ -429,15 +449,15 @@
     <div class="blob" style="width:360px;height:360px;bottom:-140px;right:-100px;opacity:.22;"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy reveal in">
-        <div class="status-badge"><span class="pulse-dot"></span>OPEN TO FULL-TIME DATA ANALYST ROLES</div>
+        <div class="status-badge"><span class="pulse-dot"></span>OPEN TO DATA SCIENTIST &amp; ANALYST ROLES</div>
         <h1 class="hero-h"><span class="hi">Hi, I'm</span><span class="grad-text">Anshul Kumar Singh</span></h1>
-        <p class="hero-sub2">Data Analyst<span class="pipe">|</span>SQL · Python · Power BI · Tableau</p>
-        <p class="hero-desc">Proprietary trader turned data analyst — I turn <b style="color:var(--text);">real-time market data</b> into P&amp;L, risk, and business insight. Now bringing that instinct to SQL, Python, Power BI, and Tableau.</p>
+        <p class="hero-sub2">Professional Data Scientist<span class="pipe">&amp;</span>Data Analyst</p>
+        <p class="hero-desc">Proprietary trader turned data scientist and analyst — I turn <b style="color:var(--text);">real-time market data</b> into P&amp;L, risk, and predictive insight. Now building machine-learning models and dashboards with Python, SQL, Power BI, and Tableau.</p>
 
         <div class="hero-badges">
           <div class="hero-badge"><span class="dot"></span>Trading-Honed Risk Sense</div>
-          <div class="hero-badge"><span class="dot"></span>Dashboarding &amp; BI</div>
-          <div class="hero-badge"><span class="dot"></span>Data-Driven Decisions</div>
+          <div class="hero-badge"><span class="dot"></span>ML &amp; Predictive Modeling</div>
+          <div class="hero-badge"><span class="dot"></span>Dashboards &amp; BI</div>
         </div>
 
         <div class="hero-actions">
@@ -452,19 +472,21 @@
         <div class="hero-tools">
           <p>Tools I work with</p>
           <div class="tool-row">
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 0-5 1-5 4v2h5v1H5c-2 0-3 1.5-3 5s1 5 3 5h2v-3c0-2 1-3 3-3h4c1.7 0 3-1.3 3-3V6c0-3-2-4-5-4z"/><path d="M12 22c3 0 5-1 5-4v-2h-5v-1h7c2 0 3-1.5 3-5s-1-5-3-5h-2v3c0 2-1 3-3 3H8c-1.7 0-3 1.3-3 3v3c0 3 2 4 5 4z"/></svg>Python</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>SQL</span>
-            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 0-5 1-5 4v2h5v1H5c-2 0-3 1.5-3 5s1 5 3 5h2v-3c0-2 1-3 3-3h4c1.7 0 3-1.3 3-3V6c0-3-2-4-5-4z"/><path d="M12 22c3 0 5-1 5-4v-2h-5v-1h7c2 0 3-1.5 3-5s-1-5-3-5h-2v3c0 2-1 3-3 3H8c-1.7 0-3 1.3-3 3v3c0 3 2 4 5 4z"/></svg>Python</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V4h5a4 4 0 010 8H6m5 0l5 8"/></svg>R</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg>Pandas</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>NumPy</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.4L10.9 16M16.3 7.4L13.1 16M8.2 6h7.6"/></svg>Scikit-learn</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.4L10.9 16M16.3 7.4L13.1 16M8.2 6h7.6"/></svg>XGBoost</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="16" y="3" width="4" height="17" rx="1"/></svg>Power BI</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 7h16M4 17h16M7 4v4M17 4v4M7 16v4M17 16v4"/></svg>Tableau</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg>MS Excel</span>
-            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M6 20V4h5a4 4 0 010 8H6m5 0l5 8"/></svg>R</span>
+            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Streamlit</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><circle cx="8" cy="15" r="1.3"/><circle cx="13" cy="10" r="1.3"/><circle cx="18" cy="13" r="1.3"/></svg>Statistical Analysis</span>
             <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Risk Management</span>
-            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 3v4M15 3v4M9 13h.01M15 13h.01"/><path d="M2 12h2M20 12h2"/></svg>AI/ML &amp; Gen AI</span>
-            <span class="tool-chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>Data Governance &amp; Quality</span>
-            <a class="tool-chip" href="https://github.com/Anshulworld" target="_blank" rel="noopener" aria-label="GitHub profile">
-              <svg viewBox="0 0 24 24" fill="#0EA5A0"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a10.98 10.98 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.44-2.69 5.42-5.25 5.7.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.03C23.5 5.66 18.35.5 12 .5z"/></svg>GitHub
-            </a>
+            <a class="tool-chip" href="https://github.com/Anshulworld" target="_blank" rel="noopener" aria-label="GitHub profile"><svg viewBox="0 0 24 24" fill="#0EA5A0"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a10.98 10.98 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.44-2.69 5.42-5.25 5.7.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.03C23.5 5.66 18.35.5 12 .5z"/></svg>GitHub</a>
+            <a class="tool-chip tool-chip-link" href="#stack">Full tech stack ↓</a>
           </div>
         </div>
       </div>
@@ -500,17 +522,21 @@
     <div class="ticker" id="mq">
       <span><span class="dim">●</span> SQL</span>
       <span><span class="dim">●</span> PYTHON</span>
+      <span><span class="dim">●</span> R</span>
+      <span><span class="dim">●</span> MACHINE LEARNING</span>
+      <span><span class="dim">●</span> SCIKIT-LEARN</span>
+      <span><span class="dim">●</span> XGBOOST</span>
       <span><span class="dim">●</span> POWER BI</span>
       <span><span class="dim">●</span> TABLEAU</span>
+      <span><span class="dim">●</span> STREAMLIT</span>
       <span><span class="dim">●</span> RISK MANAGEMENT</span>
-      <span><span class="dim">●</span> R</span>
       <span><span class="dim">●</span> STATISTICAL ANALYSIS</span>
       <span><span class="dim">●</span> GURUGRAM · DUBAI</span>
     </div>
   </div>
 
   <div class="statement reveal">
-    <h2>Every session on the trading desk is a live exercise in reading data under pressure. <b>I'm channeling that instinct into a data analytics career.</b></h2>
+    <h2>Every session on the trading desk is a live exercise in reading data under pressure. <b>I'm channeling that instinct into a data science and analytics career.</b></h2>
   </div>
 
   <!-- ================= ABOUT ================= -->
@@ -531,22 +557,22 @@
           <div class="flow-arrow">→</div>
           <div class="flow-node">
             <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg></div>
-            <span>SQL / Python</span>
+            <span>Python / ML</span>
           </div>
           <div class="flow-arrow">→</div>
           <div class="flow-node">
             <div class="flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="16" y="3" width="4" height="17" rx="1"/></svg></div>
-            <span>Dashboards</span>
+            <span>Models &amp; BI</span>
           </div>
         </div>
-        <p class="panel-quote">"Comfortable reading <em>volatile, high-pressure data</em> — now turning that instinct into business dashboards and decisions."</p>
+        <p class="panel-quote">"Comfortable reading <em>volatile, high-pressure data</em> — now turning that instinct into predictive models and business decisions."</p>
       </div>
 
       <div class="about-copy reveal">
         <p class="eyebrow">About Me</p>
         <h3>Turning Market Data <span class="grad-text">into Business Insight</span></h3>
-        <p>Proprietary trader managing funded accounts since 2024 — reading real-time market data, tracking P&amp;L, and applying risk management under pressure. Alongside trading, I'm completing an MBA in Analytics &amp; Data Science at Manipal University Jaipur, with hands-on training across SQL, Python, Power BI, and Tableau.</p>
-        <p>I'm actively seeking a full-time Data Analyst role where I can bring that same discipline to business data — risk, forecasting, and performance dashboards.</p>
+        <p>Proprietary trader managing funded accounts since 2024 — reading real-time market data, tracking P&amp;L, and applying risk management under pressure. Alongside trading, I'm completing an MBA in Analytics &amp; Data Science at Manipal University Jaipur, with hands-on training across Python, SQL, machine learning, Power BI, and Tableau.</p>
+        <p>I'm actively seeking a full-time Data Scientist or Data Analyst role where I can bring that same discipline to business data — risk modelling, predictive analytics, and decision-ready dashboards.</p>
 
         <div class="info-pills">
           <div class="info-pill">
@@ -601,6 +627,12 @@
       </div>
       <div class="skills-grid">
         <div class="glass skill-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.4L10.9 16M16.3 7.4L13.1 16M8.2 6h7.6"/></svg></div>
+          <h4>Machine Learning &amp; Predictive Modeling</h4>
+          <p>Classification, regression, and tree ensembles (Random Forest, XGBoost) with feature engineering and ROC-AUC / recall evaluation.</p>
+          <span class="skill-status">HANDS-ON</span>
+        </div>
+        <div class="glass skill-card reveal">
           <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
           <h4>Data Analysis &amp; Visualization</h4>
           <p>SQL, Python (Pandas, NumPy), Power BI, and Tableau.</p>
@@ -609,8 +641,14 @@
         <div class="glass skill-card reveal">
           <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
           <h4>Statistical &amp; Quantitative Analysis</h4>
-          <p>Hypothesis testing and statistical reasoning in Python and R.</p>
+          <p>Statistical reasoning and quantitative analysis in Python and R.</p>
           <span class="skill-status">PROFICIENT</span>
+        </div>
+        <div class="glass skill-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h4>Model Deployment</h4>
+          <p>Serving trained models as Streamlit apps for real-time scoring, with Joblib model serialization.</p>
+          <span class="skill-status">HANDS-ON</span>
         </div>
         <div class="glass skill-card live reveal">
           <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
@@ -625,19 +663,77 @@
           <span class="skill-status">LIVE STRENGTH</span>
         </div>
       </div>
-      <div class="toolkit-wrap reveal">
-        <span class="lab">Full Toolkit</span>
-        <div class="skill-tags">
-          <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">Power BI</span>
-          <span class="tag">Tableau</span><span class="tag">MS Excel</span><span class="tag">Statistical Analysis</span>
-          <span class="tag">Risk Management</span><span class="tag">AI/ML &amp; Gen AI</span><span class="tag">Data Governance &amp; Quality</span>
+    </div>
+  </section>
+
+  <!-- ================= TECH STACK ================= -->
+  <section class="sec sec-alt" id="stack">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <p class="eyebrow" style="justify-content:center;">Tech Stack</p>
+        <h2>The Data Science &amp; Analytics Toolkit</h2>
+      </div>
+      <div class="stack-grid">
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h4>Languages &amp; Query</h4>
+          <p>Core languages for analysis, modelling, and querying.</p>
+          <div class="chip-wrap"><span class="tech-chip">Python</span><span class="tech-chip">SQL</span><span class="tech-chip">R</span><span class="tech-chip">Jupyter Notebook</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg></div>
+          <h4>Data Analysis &amp; Wrangling</h4>
+          <p>Cleaning, exploring, and visualising data in Python.</p>
+          <div class="chip-wrap"><span class="tech-chip">Pandas</span><span class="tech-chip">NumPy</span><span class="tech-chip">Matplotlib</span><span class="tech-chip">Seaborn</span><span class="tech-chip">BeautifulSoup</span><span class="tech-chip">Web Scraping</span><span class="tech-chip">EDA</span><span class="tech-chip">Data Cleaning</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7.7 7.4L10.9 16M16.3 7.4L13.1 16M8.2 6h7.6"/></svg></div>
+          <h4>Machine Learning</h4>
+          <p>Predictive modelling from feature engineering to evaluation.</p>
+          <div class="chip-wrap"><span class="tech-chip">Scikit-learn</span><span class="tech-chip">XGBoost</span><span class="tech-chip">Random Forest</span><span class="tech-chip">Decision Trees</span><span class="tech-chip">Extra Trees</span><span class="tech-chip">Regression</span><span class="tech-chip">Classification</span><span class="tech-chip">Feature Engineering</span><span class="tech-chip">ROC-AUC · Precision · Recall</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+          <h4>Deep Learning &amp; NLP</h4>
+          <p>Hands-on coursework in neural networks and NLP fundamentals.</p>
+          <div class="chip-wrap"><span class="tech-chip">TensorFlow</span><span class="tech-chip">Keras</span><span class="tech-chip">Artificial Neural Networks</span><span class="tech-chip">NLP Fundamentals</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg></div>
+          <h4>Databases &amp; SQL</h4>
+          <p>Relational design and advanced querying.</p>
+          <div class="chip-wrap"><span class="tech-chip">PostgreSQL</span><span class="tech-chip">MySQL</span><span class="tech-chip">SQLAlchemy</span><span class="tech-chip">CTEs</span><span class="tech-chip">Window Functions</span><span class="tech-chip">Joins &amp; Aggregations</span><span class="tech-chip">Stored Procedures</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="16" y="3" width="4" height="17" rx="1"/></svg></div>
+          <h4>BI &amp; Visualization</h4>
+          <p>Interactive dashboards and executive reporting.</p>
+          <div class="chip-wrap"><span class="tech-chip">Power BI</span><span class="tech-chip">DAX</span><span class="tech-chip">Power Query</span><span class="tech-chip">Data Modeling</span><span class="tech-chip">Star Schema</span><span class="tech-chip">Tableau</span><span class="tech-chip">Excel (Advanced)</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h4>Deployment &amp; Workflow</h4>
+          <p>Shipping models and keeping work reproducible.</p>
+          <div class="chip-wrap"><span class="tech-chip">Streamlit</span><span class="tech-chip">Joblib</span><span class="tech-chip">Model Serialization</span><span class="tech-chip">Git</span><span class="tech-chip">GitHub</span><span class="tech-chip">VS Code</span><span class="tech-chip">Kaggle API</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 3v4M15 3v4M9 13h.01M15 13h.01"/><path d="M2 12h2M20 12h2"/></svg></div>
+          <h4>Generative AI</h4>
+          <p>AI-assisted analysis and building with LLM tools.</p>
+          <div class="chip-wrap"><span class="tech-chip">ChatGPT</span><span class="tech-chip">Microsoft Copilot</span><span class="tech-chip">Claude</span><span class="tech-chip">Claude Code</span><span class="tech-chip">Google AI</span><span class="tech-chip">Prompt Engineering</span></div>
+        </div>
+        <div class="glass stack-card reveal">
+          <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+          <h4>Statistics, Risk &amp; Quant</h4>
+          <p>Quantitative thinking sharpened by live trading.</p>
+          <div class="chip-wrap"><span class="tech-chip">Statistical Analysis</span><span class="tech-chip">Quantitative Analysis</span><span class="tech-chip">Risk Management</span><span class="tech-chip">P&amp;L Analysis</span><span class="tech-chip">Backtesting</span><span class="tech-chip">Data Governance &amp; Quality</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= PROJECTS ================= -->
-  <section class="sec sec-alt" id="projects">
+  <section class="sec" id="projects">
     <div class="wrap">
       <div class="sec-head center reveal">
         <p class="eyebrow" style="justify-content:center;">Portfolio</p>
@@ -773,7 +869,7 @@
   </section>
 
   <!-- ================= EDUCATION ================= -->
-  <section class="sec" id="education">
+  <section class="sec sec-alt" id="education">
     <div class="wrap">
       <div class="sec-head center reveal">
         <p class="eyebrow" style="justify-content:center;">Education</p>
@@ -808,7 +904,7 @@
   </section>
 
   <!-- ================= CERTIFICATIONS ================= -->
-  <section class="sec sec-alt" id="certs">
+  <section class="sec" id="certs">
     <div class="wrap">
       <div class="sec-head center reveal">
         <p class="eyebrow" style="justify-content:center;">Credentials</p>
@@ -946,7 +1042,7 @@
   </section>
 
   <!-- ================= BADGES ================= -->
-  <section class="sec" id="badges">
+  <section class="sec sec-alt" id="badges">
     <div class="wrap">
       <div class="sec-head center reveal">
         <p class="eyebrow" style="justify-content:center;">Badges</p>
@@ -975,14 +1071,14 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section class="sec sec-alt" id="contact">
+  <section class="sec" id="contact">
     <div class="wrap">
       <div class="glass contact-card reveal">
         <div class="blob"></div>
         <div class="contact-left">
           <p class="eyebrow">Let's Work Together</p>
           <h2>Let's Talk<br>Data.</h2>
-          <p>Actively seeking full-time Data Analyst opportunities — bringing real-world market experience, risk discipline, and a growing analytics toolkit to the table.</p>
+          <p>Actively seeking full-time Data Scientist and Data Analyst opportunities — bringing real-world market experience, risk discipline, and a growing data toolkit to the table.</p>
           <a href="mailto:theanshulworld@gmail.com" class="btn btn-primary">Send a Message
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </a>
@@ -1017,9 +1113,9 @@
       <div class="footer-brand">
         <div class="brand" style="margin-bottom:0;">
           <span class="brand-badge">AS</span>
-          <span class="brand-name">Anshul Kumar Singh<span>Data Analyst</span></span>
+          <span class="brand-name">Anshul Kumar Singh<span>Data Scientist &amp; Data Analyst</span></span>
         </div>
-        <p>Turning market data into business insight — SQL, Python, Power BI &amp; Tableau.</p>
+        <p>Turning market data into business insight — Python, SQL, machine learning &amp; BI.</p>
         <div class="social-row" style="margin-top:16px;">
           <a href="https://github.com/Anshulworld" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="#0EA5A0"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.95.1-.75.4-1.25.73-1.53-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a10.98 10.98 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.44-2.69 5.42-5.25 5.7.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.03C23.5 5.66 18.35.5 12 .5z"/></svg></a>
           <a href="https://www.linkedin.com/in/anshulworld/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#0EA5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -1032,7 +1128,7 @@
       </div>
       <div class="footer-col">
         <h5>Focus Areas</h5>
-        <a href="#certs">Certifications</a><a href="#badges">Badges</a><a href="#education">Education</a><a href="#projects">SQL &amp; Power BI</a>
+        <a href="#certs">Certifications</a><a href="#badges">Badges</a><a href="#education">Education</a><a href="#stack">Tech Stack</a>
       </div>
       <div class="footer-col">
         <h5>Get in Touch</h5>
@@ -1040,7 +1136,7 @@
         <a href="#contact">Gurugram, Haryana</a>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Anshul Kumar Singh — Data Analyst. All rights reserved.</span></div>
+    <div class="footer-bottom"><span>© 2026 Anshul Kumar Singh — Data Scientist &amp; Data Analyst. All rights reserved.</span></div>
   </div>
 </footer>
 
@@ -1064,7 +1160,7 @@
   burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-  window.addEventListener('resize', () => { if (window.innerWidth > 760) setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 920) setMenu(false); });
 
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
